@@ -4,7 +4,7 @@ b = 5;
 clf;
 %%Aufgabe 1a
 pd = makedist('Uniform','lower',a,'upper',b);
-x = -5:0.5:10;
+x = -5:0.001:10;
 pdf1 = pdf(pd,x);
 figure(1);
 stairs(x,pdf1,'r','LineWidth',2);
@@ -50,7 +50,7 @@ F = mvnpdf([X1(:) X2(:)],MittelwertsvektorU,KovarianzenU);
 F = reshape(F,length(x2),length(x1));
 
 mvncdf([0 0],[1 1],MittelwertsvektorU,KovarianzenU);
-contour(x1,x2,F,[.05 .025]);
+contour(x1,x2,F,[.07 .06 .05 .04]);
 xlabel('x'); ylabel('y');
 title('Darstellung der multivariaten Normalverteilungen als Kontur(Höhenlinien)')
 hold on;
@@ -61,7 +61,7 @@ F = mvnpdf([X1(:) X2(:)],MittelwertsvektorV,KovarianzenV);
 F = reshape(F,length(x2),length(x1));
 
 mvncdf([0 0],[1 1],MittelwertsvektorV,KovarianzenV);
-contour(x1,x2,F,[.05 .025]);
+contour(x1,x2,F,[.07 .06 .05 .04]);
 xlabel('x'); ylabel('y');
 %Trennlinie
 line([0 5],[-5 5],'Linestyle','-','Color','r');
@@ -83,7 +83,7 @@ xlabel('x'); ylabel('y');
 title('3D Plot für Mittelwertsvektor aus Aufgabe 2a3');
 %Konturbild
 figure(4);
-contour(X,Y,F,[.01 .05 0.001 0.005]);
+contour(X,Y,F,[.03 .01 .005 .001]);
 xlabel('x'); ylabel('y');
 title('Konturbild für Mittelwertsvektor aus Aufgabe 2a3');
 %Random Samples
@@ -107,7 +107,7 @@ xlabel('x'); ylabel('y');
 title('3D Plot mit starker y-Streuung');
 %Konturbild
 figure(7);
-contour(X,Y,F,[.01 .05 0.001 0.005]);
+contour(X,Y,F,[.03 .01 .005 .001]);
 xlabel('x'); ylabel('y');
 title('Konturbild mit starker Y Streuung');
 %Random Samples
@@ -132,7 +132,7 @@ xlabel('x'); ylabel('y');
 title('3D Plot mit sehr breiter Streuung in X und Y Richtung');
 %Konturbild
 figure(9);
-contour(X,Y,F,[.01 .05 0.001 0.005]);
+contour(X,Y,F,[.006 .004 .002 .001]);
 xlabel('x'); ylabel('y');
 title('Konturbild mit sehr breiter Streuung in X und Y Richtung');
 %Random Samples
